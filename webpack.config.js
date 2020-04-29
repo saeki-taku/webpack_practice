@@ -1,4 +1,6 @@
 const path = require('path');
+const MiniCssExtarctPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -12,7 +14,7 @@ module.exports = {
         test: /\.css/,/**.cssファイル名を検知するシステム */
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtarctPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -21,4 +23,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new MiniCssExtarctPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 }
