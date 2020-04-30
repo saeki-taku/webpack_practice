@@ -12,13 +12,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css/,/**.cssファイル名を検知するシステム */
+        test: /\.(css|sass|scss)/,/**.css|sass|scssファイル名を検知するシステム */
         use: [
           {
             loader: MiniCssExtarctPlugin.loader,
           },
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
       },
@@ -61,6 +64,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/template/access.pug',
       filename: 'access.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/template/members/taro.pug',
+      filename: 'members/taro.html',
     }),
     new CleanWebpackPlugin(),
   ],

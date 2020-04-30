@@ -1,4 +1,14 @@
+.footer {
+  background-color: #ddd; }
+
 body {
-  color: lightblue;
-}
+  color: lightblue; }
+
+.contnet {
+  margin-right: 16px; }
+  .contnet .title, .contnet .title-lg {
+    font-size: 24px;
+    color: orange; }
+  .contnet .title-lg {
+    font-size: 32px; }
 
